@@ -4,6 +4,7 @@
 > live threat intelligence enrichment, MITRE ATT&CK classification,
 > and real-time Discord alerting.
 
+
 ## Resume Bullet Points
 
 - Engineered an ML-powered anomaly detection pipeline using Isolation Forest + Random Forest + LSTM ensemble on 52,000+ security events/day from simulated Windows and Linux environments
@@ -12,22 +13,37 @@
 - Built a Streamlit analyst dashboard with one-click IOC lookup, MITRE ATT&CK heatmap, and severity-based alert feed
 - Automated Discord alerting for CRITICAL threats, reducing simulated analyst triage time by 35%
 
+
 ## Architecture
+
 Raw Logs (52,000+ events/day)
-│
-▼
-Isolation Forest + Random Forest + LSTM Ensemble
-│  Anomalies detected
-▼
-VirusTotal + AbuseIPDB Live Enrichment
-│  Enriched alerts
-▼
-MITRE ATT&CK Classification (14 techniques)
-│
-┌────┴────┐
-▼         ▼
-Discord    Streamlit
-Alerts     Dashboard
+         │
+         ▼
+┌────────────────────────────────────┐
+│       ENSEMBLE ML DETECTION        │
+│  Isolation Forest (unsupervised)   │
+│  Random Forest   (semi-supervised) │
+│  LSTM Autoencoder (time-series)    │
+└──────────────┬─────────────────────┘
+               │  Anomalies detected
+               ▼
+┌────────────────────────────────────┐
+│    LIVE THREAT INTELLIGENCE        │
+│  VirusTotal API  +  AbuseIPDB API  │
+│  Real-time IOC validation          │
+└──────────────┬─────────────────────┘
+               │  Enriched alerts
+               ▼
+┌────────────────────────────────────┐
+│   MITRE ATT&CK CLASSIFICATION      │
+│  14 techniques across 6 tactics    │
+│  Severity scoring + IOC flagging   │
+└───────┬────────────────┬───────────┘
+        │                │
+        ▼                ▼
+ Discord Alerts    Streamlit Dashboard
+ (real-time)       (analyst web UI)
+
 
 ## ML Models
 
