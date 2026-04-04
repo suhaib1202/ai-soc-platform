@@ -5,7 +5,7 @@
 > and real-time Discord alerting.
 
 
-## Resume Bullet Points
+## Description 
 
 - Engineered an ML-powered anomaly detection pipeline using Isolation Forest + Random Forest + LSTM ensemble on 52,000+ security events/day from simulated Windows and Linux environments
 - Implemented automated MITRE ATT&CK technique classification across 14 attack techniques including lateral movement, privilege escalation, and command & control
@@ -53,6 +53,7 @@ Raw Logs (52,000+ events/day)
 | Random Forest | Semi-supervised | ~91% |
 | LSTM Autoencoder | Deep Learning | ~88% |
 | **Ensemble** | Voting | **~94%** |
+
 
 ## Quick Start
 ```bash
