@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+models/
+venv/
+.DS_Store
+data/raw_logs.json
