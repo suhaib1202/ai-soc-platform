@@ -16,34 +16,35 @@
 
 ## Architecture
 
-Raw Logs (52,000+ events/day)
-         │
-         ▼
-┌────────────────────────────────────┐
-│       ENSEMBLE ML DETECTION        │
-│  Isolation Forest (unsupervised)   │
-│  Random Forest   (semi-supervised) │
-│  LSTM Autoencoder (time-series)    │
-└──────────────┬─────────────────────┘
-               │  Anomalies detected
-               ▼
-┌────────────────────────────────────┐
-│    LIVE THREAT INTELLIGENCE        │
-│  VirusTotal API  +  AbuseIPDB API  │
-│  Real-time IOC validation          │
-└──────────────┬─────────────────────┘
-               │  Enriched alerts
-               ▼
-┌────────────────────────────────────┐
-│   MITRE ATT&CK CLASSIFICATION      │
-│  14 techniques across 6 tactics    │
-│  Severity scoring + IOC flagging   │
-└───────┬────────────────┬───────────┘
-        │                │
-        ▼                ▼
- Discord Alerts    Streamlit Dashboard
- (real-time)       (analyst web UI)
-
+    Raw Logs (52,000+ events/day)
+              |
+              v
+    +----------------------------------+
+    |      ENSEMBLE ML DETECTION       |
+    |  Isolation Forest (unsupervised) |
+    |  Random Forest (semi-supervised) |
+    |  LSTM Autoencoder (time-series)  |
+    +----------------------------------+
+              |
+              v  Anomalies Detected
+    +----------------------------------+
+    |    LIVE THREAT INTELLIGENCE      |
+    |  VirusTotal API                  |
+    |  AbuseIPDB API                   |
+    +----------------------------------+
+              |
+              v  Enriched Alerts
+    +----------------------------------+
+    |  MITRE ATT&CK CLASSIFICATION     |
+    |  14 techniques, 6 tactics        |
+    |  Severity scoring + IOC flagging |
+    +----------------------------------+
+              |
+         _____|_____
+        |           |
+        v           v
+    [Discord]   [Streamlit]
+     Alerts      Dashboard
 
 ## ML Models
 
@@ -68,3 +69,8 @@ streamlit run app.py
 ## Tech Stack
 
 Python · scikit-learn · TensorFlow · Streamlit · Plotly · ELK Stack · MITRE ATT&CK · VirusTotal API · AbuseIPDB API · Discord · Docker
+
+
+## Outputs
+
+Can view outputs/results of this project in the output folder.
