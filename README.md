@@ -74,3 +74,10 @@ Python · scikit-learn · TensorFlow · Streamlit · Plotly · ELK Stack · MITR
 ## Outputs
 
 Can view outputs/results of this project in the output folder.
+
+
+## 👤 Author
+
+**Mohammed Abdullah Suhaib** · [GitHub](https://github.com/suhaib1202)
+
+---
