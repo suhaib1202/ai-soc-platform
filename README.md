@@ -1,4 +1,4 @@
-# 🛡️ AI-Powered SOC Analyst Assistant
+<img width="1920" height="884" alt="a Overview1" src="https://github.com/user-attachments/assets/2819cd8e-e358-40fb-9888-e4155b91ca82" /># 🛡️ AI-Powered SOC Analyst Assistant
 
 > End-to-end SOC automation platform with ensemble ML detection,
 > live threat intelligence enrichment, MITRE ATT&CK classification,
@@ -57,7 +57,7 @@ Raw Logs (52,000+ events/day)
 
 ## Quick Start
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-soc-platform.git
+git clone https://github.com/suhaib1202/ai-soc-platform.git
 cd ai-soc-platform
 pip install -r requirements.txt
 # Add your API keys to .env
